@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXRadioButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="anPane" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="yapp.LoginController">
+    <children>
+        <Label fx:id="label" layoutX="126" layoutY="120" minHeight="16" minWidth="69" />
+      <Pane prefHeight="600.0" prefWidth="500.0" style="-fx-background-color: #023e8a;">
+         <children>
+            <Label layoutX="99.0" layoutY="142.0" prefHeight="92.0" prefWidth="271.0" text="YAPP" textFill="WHITE">
+               <font>
+                  <Font size="96.0" />
+               </font>
+            </Label>
+            <Label layoutX="91.0" layoutY="253.0" prefHeight="92.0" prefWidth="279.0" text="MART" textFill="WHITE">
+               <font>
+                  <Font size="96.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <ImageView fitHeight="159.0" fitWidth="153.0" layoutX="686.0" layoutY="45.0" opacity="0.87" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/user.png" />
+         </image>
+      </ImageView>
+      <JFXTextField fx:id="tfEmail" focusColor="#7400ff" labelFloat="true" layoutX="624.0" layoutY="326.0" prefHeight="31.0" prefWidth="264.0" promptText="Email" unFocusColor="#7400ff" />
+      <JFXButton fx:id="log" layoutX="630.0" layoutY="476.0" onAction="#loginButton" prefHeight="49.0" prefWidth="118.0" style="-fx-background-color: #023e8a;" text="Login" textFill="WHITE" />
+      <Label layoutX="673.0" layoutY="239.0" prefHeight="49.0" prefWidth="165.0" text="WELCOME" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="33.0" />
+         </font>
+      </Label>
+      <JFXPasswordField fx:id="tfPassword" focusColor="#7400ff" layoutX="622.0" layoutY="380.0" prefHeight="31.0" prefWidth="264.0" promptText="Password" unFocusColor="#7400ff" />
+      <Label layoutX="553.0" layoutY="440.0" text="Login as :">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+      <JFXRadioButton fx:id="selectAdmin" layoutX="627.0" layoutY="441.0" selected="true" text="Admin">
+         <toggleGroup>
+            <ToggleGroup fx:id="loginType" />
+         </toggleGroup>
+      </JFXRadioButton>
+      <JFXRadioButton fx:id="selectEmployee" layoutX="702.0" layoutY="441.0" text="Employee" toggleGroup="$loginType" />
+      <JFXRadioButton fx:id="selectCustomer" layoutX="799.0" layoutY="441.0" text="Customer" toggleGroup="$loginType" />
+      <JFXButton layoutX="768.0" layoutY="476.0" onAction="#gotoSignUp" prefHeight="49.0" prefWidth="118.0" style="-fx-background-color: #448AFF;" text="Sign Up" textFill="WHITE" />
+    </children>
+</AnchorPane>

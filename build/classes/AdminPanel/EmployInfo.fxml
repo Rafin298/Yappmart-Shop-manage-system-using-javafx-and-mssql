@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXCheckBox?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="AdminPanel.EmployInfoController">
+      <children>
+      <Pane prefHeight="600.0" prefWidth="157.0" style="-fx-background-color: #023e8a;">
+         <children>
+            <JFXButton layoutX="14.0" layoutY="219.0" onAction="#gotoEmployee" prefHeight="31.0" prefWidth="128.0" ripplerFill="#030303" style="-fx-background-color: #2196F3; -fx-background-radius: 20px;" text="Employee" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </JFXButton>
+            <JFXButton layoutX="14.0" layoutY="326.0" onAction="#gotoOrderInfo" prefHeight="31.0" prefWidth="128.0" ripplerFill="#fff4a4" style="-fx-background-color: #2196F3; -fx-background-radius: 20px;" text="Orders Info" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font></JFXButton>
+            <JFXButton layoutX="13.0" layoutY="272.0" onAction="#gotoEmployInfo" prefHeight="31.0" prefWidth="128.0" ripplerFill="#030303" style="-fx-background-color: #f77f00; -fx-background-radius: 20px;" text="Employee Info" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </JFXButton>
+            <JFXButton layoutX="12.0" layoutY="533.0" onAction="#LogOut" prefHeight="31.0" prefWidth="128.0" ripplerFill="#fff4a4" style="-fx-background-color: #C2185B;" text="Log out" textFill="#ffebeb">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </JFXButton>
+            <JFXButton layoutX="12.0" layoutY="174.0" onAction="#gotoAdminDashboard" prefHeight="31.0" prefWidth="128.0" ripplerFill="#030303" style="-fx-background-color: #2196F3; -fx-background-radius: 20px;" text="Dash Board" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </Pane>
+      <JFXButton layoutX="844.0" layoutY="23.0" onAction="#search" prefHeight="67.0" prefWidth="125.0" ripplerFill="BLACK" style="-fx-background-color: green;" text="Search" textFill="WHITE">
+         <font>
+            <Font size="23.0" />
+         </font></JFXButton>
+      <JFXDatePicker fx:id="tfBday" layoutX="549.0" layoutY="35.0" prefHeight="26.0" prefWidth="107.0" />
+      <TableView fx:id="tvEmployee" layoutX="262.0" layoutY="272.0" onMouseClicked="#tableClick" prefHeight="314.0" prefWidth="535.0" style="-fx-background-color: #fffbe8;">
+        <columns>
+          <TableColumn fx:id="colID" prefWidth="31.0" text="ID" />
+          <TableColumn fx:id="ColName" prefWidth="103.0" text="Name" />
+            <TableColumn fx:id="colSex" prefWidth="65.0" text="Sex" />
+            <TableColumn fx:id="colBirthDate" prefWidth="82.0" text="BirthDate" />
+            <TableColumn fx:id="colBranchID" prefWidth="73.0" text="Branch" />
+            <TableColumn fx:id="colPosition" prefWidth="73.0" text="Position" />
+            <TableColumn fx:id="colSalary" prefWidth="73.0" text="Salary" />
+        </columns>
+      </TableView>
+      <JFXTextField fx:id="tfSalaryL" layoutX="531.0" layoutY="67.0" prefHeight="25.0" prefWidth="91.0" />
+      <JFXTextField fx:id="tfName" layoutX="316.0" layoutY="23.0" prefHeight="25.0" prefWidth="91.0" />
+      <JFXTextField fx:id="tfSalaryG" layoutX="313.0" layoutY="65.0" prefHeight="25.0" prefWidth="91.0" />
+      <JFXCheckBox fx:id="bdayCheck" layoutX="412.0" layoutY="39.0" text="Bithdate before or =" />
+      <JFXCheckBox fx:id="nameCheck" layoutX="176.0" layoutY="35.0" text="Name starts with" />
+      <JFXCheckBox fx:id="salaryGCheck" layoutX="176.0" layoutY="76.0" text="Salary &gt;=" />
+      <JFXCheckBox fx:id="salaryLCheck" layoutX="412.0" layoutY="78.0" text="Salary &lt;=" />
+      <JFXTextField fx:id="tfPosition" layoutX="531.0" layoutY="106.0" prefHeight="25.0" prefWidth="91.0" />
+      <JFXTextField fx:id="tfSex" layoutX="313.0" layoutY="104.0" prefHeight="25.0" prefWidth="91.0" />
+      <JFXCheckBox fx:id="sexCheck" layoutX="176.0" layoutY="115.0" text="Sex" />
+      <JFXCheckBox fx:id="positionCheck" layoutX="412.0" layoutY="117.0" text="Position" />
+      <JFXButton layoutX="844.0" layoutY="103.0" onAction="#showAll" prefHeight="67.0" prefWidth="125.0" ripplerFill="BLACK" style="-fx-background-color: #0288D1;" text="Show All" textFill="WHITE">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </JFXButton>
+      <JFXCheckBox fx:id="branchCheck" layoutX="665.0" layoutY="44.0" text="Branch" />
+      <JFXCheckBox fx:id="maxSalaryCheck" layoutX="176.0" layoutY="164.0" text="max salary " />
+      <JFXCheckBox fx:id="averageSalaryCheck" layoutX="176.0" layoutY="191.0" text="salary&gt;average salary" />
+      <JFXComboBox fx:id="maxSalaryComboBox" layoutX="276.0" layoutY="161.0" />
+      <JFXComboBox fx:id="orderByComboBox" layoutX="682.0" layoutY="197.0" prefHeight="25.0" prefWidth="115.0" />
+      <JFXCheckBox fx:id="orderByCheck" layoutX="563.0" layoutY="203.0" text="Order By Salary" />
+      <JFXComboBox fx:id="branchComboBox" layoutX="727.0" layoutY="41.0" prefHeight="25.0" prefWidth="84.0" />
+      <JFXCheckBox fx:id="anyMaxSalaryCheck" layoutX="176.0" layoutY="218.0" text="salary&gt;=max salary of any branch" />
+   </children>
+</AnchorPane>
